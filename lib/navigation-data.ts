@@ -1,4 +1,23 @@
-export const navigationItems = {
+export type NavigationItem = {
+  icon: string;
+  href?: string;
+  items?: {
+    title: string;
+    icon: string;
+    href?: string;
+    items?: {
+      title: string;
+      href: string;
+      icon: string;
+    }[];
+  }[];
+}
+
+export type NavigationItems = {
+  [key: string]: NavigationItem;
+}
+
+export const navigationItems: NavigationItems = {
 "About Us": {
   icon: "Info",
   items: [

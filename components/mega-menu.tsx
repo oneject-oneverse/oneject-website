@@ -3,11 +3,25 @@
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, ChevronRight } from 'lucide-react'
-import * as Icons from 'lucide-react'
+import { ChevronDown, ChevronRight, Package, Building, Users, Phone, Mail } from 'lucide-react'
 
 import { cn } from "@/lib/utils"
 import { navigationItems } from "@/lib/navigation-data"
+import type { NavigationItems } from "@/lib/navigation-data"
+
+// Define the Icons object with proper typing
+const Icons = {
+  chevronDown: ChevronDown,
+  chevronRight: ChevronRight,
+  package: Package,
+  building: Building,
+  users: Users,
+  phone: Phone,
+  mail: Mail
+} as const
+
+// Create a type for the icon names
+type IconName = keyof typeof Icons
 
 export function MegaMenu() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
@@ -18,8 +32,8 @@ export function MegaMenu() {
     icon: string;
   } | null>(null)
 
-  const renderIcon = (iconName: string) => {
-    const IconComponent = Icons[iconName as keyof typeof Icons]
+  const renderIcon = (iconName: IconName) => {
+    const IconComponent = Icons[iconName]
     return IconComponent ? <IconComponent className="h-4 w-4 mr-0.5" /> : null
   }
 
@@ -42,12 +56,12 @@ export function MegaMenu() {
                 href={value.href}
                 className="flex items-center space-x-0.5 text-sm font-medium text-[#6DC5EE] hover:text-[#3F8F81]"
               >
-                {renderIcon(value.icon)}
+                {renderIcon(value.icon as IconName)}
                 <span>{key}</span>
               </Link>
             ) : (
               <button className="flex items-center space-x-1 text-sm font-medium text-[#6DC5EE] hover:text-[#3F8F81]">
-                {renderIcon(value.icon)}
+                {renderIcon(value.icon as IconName)}
                 <span>{key}</span>
                 <ChevronDown className="h-4 w-4 ml-1" />
               </button>
@@ -98,7 +112,7 @@ export function MegaMenu() {
                                 <div className="flex items-center justify-between">
                                   <div className="flex items-center space-x-3">
                                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#6DC5EE] text-white">
-                                      {renderIcon(category.icon)}
+                                      {renderIcon(category.icon as IconName)}
                                     </div>
                                     <div>
                                       <h3 className="font-semibold text-[#3F8F81]">
@@ -125,7 +139,7 @@ export function MegaMenu() {
                                   <div key={category.title} className="space-y-6">
                                     <div className="flex items-center space-x-3">
                                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#6DC5EE] text-white">
-                                        {renderIcon(category.icon)}
+                                        {renderIcon(category.icon as IconName)}
                                       </div>
                                       <h3 className="text-xl font-semibold text-[#3F8F81]">
                                         {category.title}
@@ -143,7 +157,7 @@ export function MegaMenu() {
                                         >
                                           <div className="flex items-center space-x-0.5">
                                             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-600">
-                                              {renderIcon(item.icon)}
+                                              {renderIcon(item.icon as IconName)}
                                             </div>
                                             <span className="font-medium text-gray-700">
                                               {item.title}
@@ -201,7 +215,7 @@ export function MegaMenu() {
                       {value.items?.map((column, index) => (
                         <div key={index} className="space-y-4 flex-1">
                           <h3 className="text-sm font-semibold text-[#6DC5EE] flex items-center">
-                            {renderIcon(column.icon)}
+                            {renderIcon(column.icon as IconName)}
                             {column.title}
                           </h3>
                           <ul className="space-y-2">
@@ -211,7 +225,7 @@ export function MegaMenu() {
                                   href={item.href ?? '#'}
                                   className="flex items-center space-x-0.5 text-sm font-medium text-[#3F8F81] hover:text-[#6DC5EE]"
                                 >
-                                  {renderIcon(item.icon)}
+                                  {renderIcon(item.icon as IconName)}
                                   <span>{item.title}</span>
                                 </Link>
                               </li>

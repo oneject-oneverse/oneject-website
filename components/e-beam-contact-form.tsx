@@ -5,11 +5,24 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { LucideIcon } from 'lucide-react'
+import { Mail, Phone, Building2, User, Package } from 'lucide-react'
 
-// Define the type for your Icons object
-const Icons: Record<string, LucideIcon> = {
-  // your icons here
+// Define the Icons object with proper typing
+const Icons = {
+  mail: Mail,
+  phone: Phone,
+  building: Building2,
+  user: User,
+  package: Package
+} as const
+
+// If you don't actually need the renderIcon function, you can remove it
+// Otherwise, update the type definition:
+type IconName = keyof typeof Icons
+
+const renderIcon = (iconName: IconName) => {
+  const IconComponent = Icons[iconName]
+  return IconComponent ? <IconComponent className="h-4 w-4 mr-0.5" /> : null
 }
 
 export function EBeamContactForm() {
@@ -35,11 +48,6 @@ export function EBeamContactForm() {
 
   const handleSelectChange = (value: string) => {
     setFormData(prev => ({ ...prev, product: value }))
-  }
-
-  const renderIcon = (iconName: string) => {
-    const IconComponent = Icons[iconName as keyof typeof Icons]
-    return IconComponent ? <IconComponent className="h-4 w-4 mr-0.5" /> : null
   }
 
   return (
