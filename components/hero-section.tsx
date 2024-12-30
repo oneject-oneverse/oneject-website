@@ -16,7 +16,7 @@ export function HeroSection() {
         Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-      <div className="relative z-10 container flex min-h-[80vh] flex-col items-start justify-center space-y-8">
+      <div className="relative z-10 container flex min-h-[80vh] flex-col items-center justify-center space-y-8">
         <div className="max-w-2xl space-y-4">
           <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl xl:text-7xl/none text-white">
             ONEJECT

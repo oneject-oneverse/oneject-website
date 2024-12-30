@@ -3,21 +3,51 @@
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, ChevronRight, Package, Building, Users, Phone, Mail } from 'lucide-react'
+import { ChevronDown, ChevronRight, Package, Building2, Users, Phone, Mail, Info, Factory, Award, Shield, Settings, Newspaper, Leaf, Globe, Scale, Briefcase, ShieldAlert, Droplets, Heart, Microscope, Stethoscope, ScanLine, History, Target, Warehouse, CheckCircle, Zap, FileText, Search, UserPlus, GraduationCap, Syringe, BadgeCheck, Radiation, MessageCircleWarning, TestTube } from 'lucide-react'
 
 import { cn } from "@/lib/utils"
 import { navigationItems } from "@/lib/navigation-data"
 import type { NavigationItems } from "@/lib/navigation-data"
 
-// Define the Icons object with proper typing
+// Update the Icons object to include all new icons
 const Icons = {
   chevronDown: ChevronDown,
   chevronRight: ChevronRight,
   package: Package,
-  building: Building,
+  building2: Building2,
   users: Users,
   phone: Phone,
-  mail: Mail
+  mail: Mail,
+  info: Info,
+  factory: Factory,
+  award: Award,
+  shield: Shield,
+  settings: Settings,
+  newspaper: Newspaper,
+  leaf: Leaf,
+  globe: Globe,
+  scale: Scale,
+  briefcase: Briefcase,
+  shieldAlert: ShieldAlert,
+  droplets: Droplets,
+  heart: Heart,
+  microscope: Microscope,
+  stethoscope: Stethoscope,
+  scanLine: ScanLine,
+  history: History,
+  target: Target,
+  warehouse: Warehouse,
+  checkCircle: CheckCircle,
+  zap: Zap,
+  fileText: FileText,
+  search: Search,
+  userPlus: UserPlus,
+  graduationCap: GraduationCap,
+  syringe: Syringe,
+  badgeCheck: BadgeCheck,
+  radiation: Radiation,
+  messageCircleWarning: MessageCircleWarning,
+  testTube: TestTube
 } as const
 
 // Create a type for the icon names
@@ -32,10 +62,10 @@ export function MegaMenu() {
     icon: string;
   } | null>(null)
 
-  const renderIcon = (iconName: IconName) => {
-    const IconComponent = Icons[iconName]
-    return IconComponent ? <IconComponent className="h-4 w-4 mr-0.5" /> : null
-  }
+  const renderIcon = (iconName: string) => {
+    const IconComponent = Icons[iconName as keyof typeof Icons];
+    return IconComponent ? <IconComponent className="h-4 w-4 mr-0.5" /> : null;
+  };
 
   return (
     <nav className="hidden lg:block">
@@ -56,12 +86,12 @@ export function MegaMenu() {
                 href={value.href}
                 className="flex items-center space-x-0.5 text-sm font-medium text-[#6DC5EE] hover:text-[#3F8F81]"
               >
-                {renderIcon(value.icon as IconName)}
+                {renderIcon(value.icon as string)}
                 <span>{key}</span>
               </Link>
             ) : (
               <button className="flex items-center space-x-1 text-sm font-medium text-[#6DC5EE] hover:text-[#3F8F81]">
-                {renderIcon(value.icon as IconName)}
+                {renderIcon(value.icon as string)}
                 <span>{key}</span>
                 <ChevronDown className="h-4 w-4 ml-1" />
               </button>
@@ -112,7 +142,7 @@ export function MegaMenu() {
                                 <div className="flex items-center justify-between">
                                   <div className="flex items-center space-x-3">
                                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#6DC5EE] text-white">
-                                      {renderIcon(category.icon as IconName)}
+                                      {renderIcon(category.icon as string)}
                                     </div>
                                     <div>
                                       <h3 className="font-semibold text-[#3F8F81]">
@@ -139,7 +169,7 @@ export function MegaMenu() {
                                   <div key={category.title} className="space-y-6">
                                     <div className="flex items-center space-x-3">
                                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#6DC5EE] text-white">
-                                        {renderIcon(category.icon as IconName)}
+                                        {renderIcon(category.icon as string)}
                                       </div>
                                       <h3 className="text-xl font-semibold text-[#3F8F81]">
                                         {category.title}
@@ -157,7 +187,7 @@ export function MegaMenu() {
                                         >
                                           <div className="flex items-center space-x-0.5">
                                             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-600">
-                                              {renderIcon(item.icon as IconName)}
+                                              {renderIcon(item.icon as string)}
                                             </div>
                                             <span className="font-medium text-gray-700">
                                               {item.title}
@@ -179,9 +209,35 @@ export function MegaMenu() {
                               <div className="space-y-6">
                                 <div className="aspect-video w-full overflow-hidden rounded-lg bg-white">
                                   <img
-                                    src="/placeholder.svg"
+                                    src={activeProduct.title === "Smart Syringe" ? "https://beehive.web.id/oji/website-asset/Product/Syringe/Smart-Syringe-1.png" : 
+                                      activeProduct.title === "Auto Disable Syringe" ? "https://beehive.web.id/oji/website-asset/Product/Syringe/ADS-1.png" :
+                                      activeProduct.title === "Safety Syringe" ? "https://beehive.web.id/oji/website-asset/Product/Syringe/Safeject-Safety-Syringe-2.png" :
+                                      activeProduct.title === "Disposable Syringe" ? "https://beehive.web.id/oji/website-asset/Product/Syringe/Safeject-Disposable-Syringe-1.png" :
+                                      activeProduct.title === "Safeject Hypodermic Needle" ? "https://beehive.web.id/oji/website-asset/Product/Syringe/safeject-needle.png" :
+                                      activeProduct.title === "Safety Needle" ? "https://beehive.web.id/oji/website-asset/Product/Syringe/safety-needle.png" :
+                                      activeProduct.title === "Safety Box" ? "https://beehive.web.id/oji/website-asset/Product/Safety%20Box/Safety-Box.png" :
+                                      
+                                      activeProduct.title === "Blood Collection Tube" ? "https://beehive.web.id/oji/website-asset/Product/Blood%20Collection%20System/BCT.png" :
+                                      activeProduct.title === "Blood Bag" ? "https://beehive.web.id/oji/website-asset/Product/Blood%20Collection%20System/Blood-Bag.png" :
+                                      
+                                      activeProduct.title === "HD Machine" ? "https://beehive.web.id/oji/website-asset/Product/Blood%20Purification/Hemodialysis.png" :
+                                      activeProduct.title === "Acid Concentrate" ? "https://beehive.web.id/oji/website-asset/Product/Blood%20Purification/Acid-Concentrate.png" :
+                                      activeProduct.title === "Sodium Bicarbonate Cartridge" ? "https://beehive.web.id/oji/website-asset/Product/Blood%20Purification/Sodium-Bicarbonate.png":
+                                      activeProduct.title === "Dialyzer" ? "https://beehive.web.id/oji/website-asset/Product/Blood%20Purification/Dialyzer.png" :
+                                      activeProduct.title === "Bloodline" ? "https://beehive.web.id/oji/website-asset/Product/Blood%20Purification/Bloodline.png" :
+                                      activeProduct.title === "AV Fistula Needle" ? "https://beehive.web.id/oji/website-asset/Product/Blood%20Purification/AV-Fistula-Needle.png" :
+                                      
+                                      activeProduct.title === "Urine Analyzer" ? "https://beehive.web.id/oji/website-asset/Product/In%20Vitro%20Diagnostic%20Instrument/Urine-Analyzer.png" :
+                                      activeProduct.title === "Blood Analyzer" ? "https://beehive.web.id/oji/website-asset/Product/In%20Vitro%20Diagnostic%20Instrument/Blood-Analyzer.png" :
+                                      activeProduct.title === "Chemistry Analyzer" ? "https://beehive.web.id/oji/website-asset/Product/In%20Vitro%20Diagnostic%20Instrument/Urine-Analyzer.png" :
+                                      
+                                      activeProduct.title === "Urine Bag" ? "" :
+                                      
+                                      activeProduct.title === "X-ray" ? "https://beehive.web.id/oji/website-asset/Product/Radiology/X-Ray-1.png" :
+                                       
+                                      "/placeholder.svg"}
                                     alt={activeProduct.title}
-                                    className="h-full w-full object-cover"
+                                    className="h-full w-full object-contain"
                                   />
                                 </div>
                                 <div className="space-y-4">
@@ -212,25 +268,37 @@ export function MegaMenu() {
                     </div>
                   ) : (
                     <div className="flex w-full justify-between">
-                      {value.items?.map((column, index) => (
+                      {value.items?.map((item, index) => (
                         <div key={index} className="space-y-4 flex-1">
-                          <h3 className="text-sm font-semibold text-[#6DC5EE] flex items-center">
-                            {renderIcon(column.icon as IconName)}
-                            {column.title}
-                          </h3>
-                          <ul className="space-y-2">
-                            {column.items?.map((item, itemIndex) => (
-                              <li key={itemIndex}>
-                                <Link
-                                  href={item.href ?? '#'}
-                                  className="flex items-center space-x-0.5 text-sm font-medium text-[#3F8F81] hover:text-[#6DC5EE]"
-                                >
-                                  {renderIcon(item.icon as IconName)}
-                                  <span>{item.title}</span>
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
+                          {item.href ? (
+                            <Link
+                              href={item.href}
+                              className="text-sm font-semibold text-[#6DC5EE] flex items-center hover:text-[#3F8F81]"
+                            >
+                              {renderIcon(item.icon as string)}
+                              <span>{item.title}</span>
+                            </Link>
+                          ) : (
+                            <>
+                              <h3 className="text-sm font-semibold text-[#6DC5EE] flex items-center">
+                                {renderIcon(item.icon as string)}
+                                {item.title}
+                              </h3>
+                              <ul className="space-y-2">
+                                {item.items?.map((subItem, subIndex) => (
+                                  <li key={subIndex}>
+                                    <Link
+                                      href={subItem.href ?? '#'}
+                                      className="flex items-center space-x-0.5 text-sm font-medium text-[#3F8F81] hover:text-[#6DC5EE]"
+                                    >
+                                      {renderIcon(subItem.icon as string)}
+                                      <span>{subItem.title}</span>
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </>
+                          )}
                         </div>
                       ))}
                     </div>

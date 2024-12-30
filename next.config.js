@@ -11,6 +11,7 @@ const nextConfig = {
         hostname: 'oneject.co.id',
       },
     ],
+    unoptimized: true
   },
 }
 
