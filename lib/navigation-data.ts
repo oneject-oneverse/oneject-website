@@ -66,7 +66,7 @@ export const navigationItems: NavigationItems = {
         ],
       },
       {
-        title: "Blood Collection System",
+        title: "Blood Collection",
         href: "/products/blood-collection-system",
         icon: "droplets",
         items: [
@@ -75,7 +75,7 @@ export const navigationItems: NavigationItems = {
         ],
       },
       {
-        title: "Dialysis Care",
+        title: "Blood Purification",
         href: "/products/dialysis",
         icon: "heart",
         items: [
@@ -88,7 +88,7 @@ export const navigationItems: NavigationItems = {
         ],
       },
       {
-        title: "Invitro Diagnostic Instrument",
+        title: "I V D",
         href: "/products/diagnostic",
         icon: "microscope",
         items: [
@@ -151,6 +151,7 @@ export const navigationItems: NavigationItems = {
         icon: "scale",
         items: [
           { title: "Certification", href: "/esg/governance/certification", icon: "scale" },
+          { title: "WBS", href: "/esg/governance/whistle-blowing", icon: "messageCircleWarning" },
         ],
       },
       { title: "ESG Report", href: "/esg/report", icon: "fileText" },
@@ -163,10 +164,6 @@ export const navigationItems: NavigationItems = {
       { title: "Join Our Team", href: "/career/join", icon: "userPlus" },
       { title: "Join MT Program", href: "/career/mt-program", icon: "graduationCap" },
     ],
-  },
-  "WBS": {
-    icon: "messageCircleWarning",
-    href: "/esg/governance/whistle-blowing",
   },
   "Contact Us": {
     icon: "phone",

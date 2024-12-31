@@ -108,8 +108,8 @@ export function ContactContent() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-2 text-gray-600">
                   <Phone className="h-5 w-5 shrink-0 text-[#6DC5EE]" />
-                  <span>+62-21-8792-1883
-                    <br /> +62-21-8790-2761 (Fax)
+                  <span>+62 21 899 789 59
+                    <br /> +62 21 8790 2761 (Fax)
                   </span>
                   
                 </div>

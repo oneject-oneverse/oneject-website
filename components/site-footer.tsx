@@ -6,8 +6,8 @@ export function SiteFooter() {
   const certifications = [
     { name: "TKDN Domestic Component Level", src: "https://oneject.co.id/wp-content/uploads/2024/06/logo-kemenperin-1-768x702.png" },
     { name: "WHO", src: "https://oneject.co.id/wp-content/uploads/2024/06/world-health-organization-vector-logo-e1718850652944-980x551.png" },
-    { name: "Halal Certification", src: "https://oneject.co.id/wp-content/uploads/2024/06/Logo-Halal-Oneject-480x791.png" },
     { name: "PQS WHO", src: "https://oneject.co.id/wp-content/uploads/2024/06/WHO-PQS-Logo-768x651.png" },
+    { name: "Halal Certification", src: "https://oneject.co.id/wp-content/uploads/2024/06/Logo-Halal-Oneject-480x791.png" },
     { name: "CE Mark", src: "https://oneject.co.id/wp-content/uploads/2024/06/Logo-CE0044.png" },
     { name: "ISO 14001, 45001, 50001", src: "https://oneject.co.id/wp-content/uploads/2024/07/mark-of-trust-multi-scheme-14001-45001-50001-logo-En-GB-0720.png" },
     { name: "ISO 13485", src: "https://oneject.co.id/wp-content/uploads/2024/07/mark-of-trust-certified-ISO-13485-quality-management-for-medical-devices-BLACK-logo-En-GB-1019.png" },
@@ -27,7 +27,6 @@ export function SiteFooter() {
                   width={120}
                   height={60}
                   className="h-15 w-auto object-contain"
-                  priority 
                 />
               </div>
             ))}
@@ -44,7 +43,7 @@ export function SiteFooter() {
                 src="https://oji.beehive.web.id/website-asset/logo-OJI.png"
                 alt="Oneject Logo"
                 width={120}
-                height={80}
+                height={40}
                 className="h-10 w-auto"
               />
             </Link>
@@ -89,6 +88,9 @@ export function SiteFooter() {
             <ul className="space-y-2">
               <li>
                 <Link href="/about" className="text-[#5B5856] hover:text-primary">About Us</Link>
+              </li>
+              <li>
+                <Link href="/esg/governance/whistle-blowing" className="text-[#5B5856] hover:text-primary">WBS</Link>
               </li>
               <li>
                 <Link href="/products" className="text-[#5B5856] hover:text-primary">Products</Link>

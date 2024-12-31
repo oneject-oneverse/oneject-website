@@ -1,6 +1,6 @@
 export function HistoryHero() {
   return (
-    <section className="relative bg-gradient-to-r from-gray-900 to-gray-800 py-24 text-white">
+    <section className="relative bg-gradient-to-r from-[#4DA8CF] to-[#5B5856] py-12 text-white">
       <div className="container mx-auto max-w-screen-xl px-4">
         <div className="relative z-10 max-w-3xl">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">

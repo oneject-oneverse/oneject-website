@@ -4,12 +4,12 @@ import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown, ChevronRight, Package, Building2, Users, Phone, Mail, Info, Factory, Award, Shield, Settings, Newspaper, Leaf, Globe, Scale, Briefcase, ShieldAlert, Droplets, Heart, Microscope, Stethoscope, ScanLine, History, Target, Warehouse, CheckCircle, Zap, FileText, Search, UserPlus, GraduationCap, Syringe, BadgeCheck, Radiation, MessageCircleWarning, TestTube } from 'lucide-react'
+import Image from "next/image";
 
 import { cn } from "@/lib/utils"
 import { navigationItems } from "@/lib/navigation-data"
 import type { NavigationItems } from "@/lib/navigation-data"
 
-// Update the Icons object to include all new icons
 const Icons = {
   chevronDown: ChevronDown,
   chevronRight: ChevronRight,
@@ -50,7 +50,6 @@ const Icons = {
   testTube: TestTube
 } as const
 
-// Create a type for the icon names
 type IconName = keyof typeof Icons
 
 export function MegaMenu() {
@@ -112,9 +111,15 @@ export function MegaMenu() {
                   {key === "Product" ? (
                     <div className="relative h-full">
                       {/* Circular Design Element */}
-                      <div className="absolute right-0 top-0 h-[600px] w-[600px] rounded-full border-2 border-[#6DC5EE]/20" />
-                      <div className="absolute right-[150px] top-[150px] h-[400px] w-[400px] rounded-full border-2 border-[#6DC5EE]/20" />
-                      
+                      <div className="absolute right-0 top-0">
+                        <Image
+                          src="https://beehive.web.id/oji/website-asset/Logogram-Oneject-New.png"
+                          alt="Oneject Logogram"
+                          width={600} // Restored to original size
+                          height={600} // Restored to original size
+                          className="opacity-50"
+                        />
+                      </div>                      
                       <div className="container mx-auto h-full max-w-screen-xl px-8 py-8">
                         <h2 className="mb-8 text-4xl font-bold text-[#3F8F81]">
                           The Smart Choice for Safety
@@ -204,10 +209,10 @@ export function MegaMenu() {
                           </div>
 
                           {/* Product Preview */}
-                          <div className="w-[45%] overflow-y-auto rounded-lg bg-gray-50 p-6">
+                          <div className="w-[45%] h-full overflow-y-auto rounded-lg bg-gray-50 p-6">
                             {activeProduct ? (
                               <div className="space-y-6">
-                                <div className="aspect-video w-full overflow-hidden rounded-lg bg-white">
+                                <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-white">
                                   <img
                                     src={activeProduct.title === "Smart Syringe" ? "https://beehive.web.id/oji/website-asset/Product/Syringe/Smart-Syringe-1.png" : 
                                       activeProduct.title === "Auto Disable Syringe" ? "https://beehive.web.id/oji/website-asset/Product/Syringe/ADS-1.png" :
@@ -237,7 +242,7 @@ export function MegaMenu() {
                                        
                                       "/placeholder.svg"}
                                     alt={activeProduct.title}
-                                    className="h-full w-full object-contain"
+                                    className="h-full w-full object-contain mx-auto"
                                   />
                                 </div>
                                 <div className="space-y-4">
