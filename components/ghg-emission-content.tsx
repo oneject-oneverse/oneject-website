@@ -21,7 +21,7 @@ export function GhgEmissionContent() {
     {
       title: "PT. Oneject Indonesia's shift to solar energy has reduced our GHG emissions by 925.9 tCO2eq annually",
       preview: "",
-      content: "PT. Oneject Indonesia's shift to solar energy has reduced our GHG emissions by 925.9 tCO2eq annually, which is a 12% decrease from our base year. This impact is equivalent to planting 42,086 trees, highlighting our commitment to sustainability and a cleaner planet. 🌍💚\n\n#oneject\n#onejectindonesia\n#smartsyringe\n#autodisablesyringe\n#medical\n#health\n#healthcare\n#wellness\n#medicallife\n#medicalinformation\n#healthinformation"
+      content: "PT. Oneject Indonesia's shift to solar energy has reduced our GHG emissions by 925.9 tCO2eq annually, which is a 12% decrease from our base year. This impact is equivalent to planting 42,086 trees, highlighting our commitment to sustainability and a cleaner planet. 🌍💚\n\n#oneject\n#onejectindonesia\n#smartsyringe\n#autodisablesyringe\n#medical\n#health\n#healthcare\n#wellness\n#medicallife\n#medicalinformation\n#healthinformation",
       images: [
         "https://oji.beehive.web.id/website-asset/ESG/GHG_Emission_Inventory/Post%201/1.jpeg",
         "https://oji.beehive.web.id/website-asset/ESG/GHG_Emission_Inventory/Post%201/2.jpeg",

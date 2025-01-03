@@ -19,9 +19,9 @@ export function NetZeroContent() {
 
   const esgItems: ESGItem[] = [
     {
-      title: "At PT. Oneject Indonesia, we’re on a mission to achieve net zero emissions",
+      title: "At PT. Oneject Indonesia, we're on a mission to achieve net zero emissions",
       preview: "",
-      content: "Our energy efficiency program, launched in August 2023, has reduced our scope 2 GHG emissions from 7,799 tCO2eq to 7,025 tCO2eq—saving 775 tCO2eq in 2023 alone. This is a key step in our climate action journey towards a more sustainable future. ⚡💚\n\n#oneject\n#onejectindonesia\n#smartsyringe\n#autodisablesyringe\n#medical\n#health\n#healthcare\n#wellness\n#medicallife\n#medicalinformation\n#healthinformation"
+      content: "Our energy efficiency program, launched in August 2023, has reduced our scope 2 GHG emissions from 7,799 tCO2eq to 7,025 tCO2eq—saving 775 tCO2eq in 2023 alone. This is a key step in our climate action journey towards a more sustainable future. ⚡💚\n\n#oneject\n#onejectindonesia\n#smartsyringe\n#autodisablesyringe\n#medical\n#health\n#healthcare\n#wellness\n#medicallife\n#medicalinformation\n#healthinformation",
       images: [
         "https://oji.beehive.web.id/website-asset/ESG/Net_Zero_Emission/Post%201/1.jpeg",
         "https://oji.beehive.web.id/website-asset/ESG/Net_Zero_Emission/Post%201/2.jpeg",
@@ -32,7 +32,7 @@ export function NetZeroContent() {
     {
       title: "Embracing the Circular Economy At PT. Oneject Indonesia",
       preview: "",
-      content: "We’re committed to reducing waste and maximizing resources through circular economy practices. By recycling and reusing materials, we’re making our medical device production more sustainable and supporting a healthier planet. Swipe to see how we’re taking action!\n\n#oneject\n#onejectindonesia\n#smartsyringe\n#autodisablesyringe\n#medical\n#health\n#healthcare\n#wellness\n#medicallife\n#medicalinformation\n#healthinformation"
+      content: "We're committed to reducing waste and maximizing resources through circular economy practices. By recycling and reusing materials, we're making our medical device production more sustainable and supporting a healthier planet. Swipe to see how we're taking action!\n\n#oneject\n#onejectindonesia\n#smartsyringe\n#autodisablesyringe\n#medical\n#health\n#healthcare\n#wellness\n#medicallife\n#medicalinformation\n#healthinformation",
       images: [
         "https://oji.beehive.web.id/website-asset/ESG/Net_Zero_Emission/Post%202/1.jpeg",
         "https://oji.beehive.web.id/website-asset/ESG/Net_Zero_Emission/Post%202/2.jpeg",
@@ -43,7 +43,7 @@ export function NetZeroContent() {
     {
       title: "PT. Oneject Indonesia is leading the green revolution in the medical device industry with a strong commitment to sustainability.",
       preview: "",
-      content: "Through the application of renewable energy, efficient use of materials, and environmentally friendly production processes, we strive to become the greenest medical device manufacturing company in Indonesia. Together, we create a better and more sustainable future.\n\n#oneject\n#onejectindonesia\n#smartsyringe\n#autodisablesyringe\n#medical\n#health\n#healthcare\n#wellness\n#medicallife\n#medicalinformation\n#healthinformation"
+      content: "Through the application of renewable energy, efficient use of materials, and environmentally friendly production processes, we strive to become the greenest medical device manufacturing company in Indonesia. Together, we create a better and more sustainable future.\n\n#oneject\n#onejectindonesia\n#smartsyringe\n#autodisablesyringe\n#medical\n#health\n#healthcare\n#wellness\n#medicallife\n#medicalinformation\n#healthinformation",
       images: [
         "https://oji.beehive.web.id/website-asset/ESG/Net_Zero_Emission/Post%203/1.jpeg",
         "https://oji.beehive.web.id/website-asset/ESG/Net_Zero_Emission/Post%203/2.jpeg"
@@ -52,7 +52,7 @@ export function NetZeroContent() {
     {
       title: "PT. Oneject Indonesia is committed to producing medical devices with sustainable practices",
       preview: "",
-      content: "PT. Oneject Indonesia is committed to producing medical devices with sustainable practices that are environmentally friendly, reduce environmental impact, and support global health.\n\n#oneject\n#onejectindonesia\n#smartsyringe\n#autodisablesyringe\n#medical\n#health\n#healthcare\n#wellness\n#medicallife\n#medicalinformation\n#healthinformation"
+      content: "PT. Oneject Indonesia is committed to producing medical devices with sustainable practices that are environmentally friendly, reduce environmental impact, and support global health.\n\n#oneject\n#onejectindonesia\n#smartsyringe\n#autodisablesyringe\n#medical\n#health\n#healthcare\n#wellness\n#medicallife\n#medicalinformation\n#healthinformation",
       images: [
         "https://oji.beehive.web.id/website-asset/ESG/Net_Zero_Emission/Post%204/1.jpeg",
         "https://oji.beehive.web.id/website-asset/ESG/Net_Zero_Emission/Post%204/2.jpeg"
