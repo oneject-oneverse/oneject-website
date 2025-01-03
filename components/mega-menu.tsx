@@ -271,7 +271,7 @@ export function MegaMenu() {
                                   />
                                 </div>
                                 <div className="space-y-4">
-                                  <h3 className="text-2xl font-bold text-[#3F8F81] bg-gray-100 p-2 rounded-md font-serif">
+                                  <h3 className="text-2xl font-bold text-[#3F8F81] bg-gray-100 p-2 rounded-md">
                                     {activeProduct.title}
                                   </h3>
                                   <p className="text-gray-600 bg-gray-50 p-2 rounded-md font-sans">
