@@ -27,7 +27,7 @@ export function HeroSection() {
             Hold tight who close to you and ensure your healthiness and safety with our Oneject Syringe
           </p>
           <Link href="https://oji.beehive.web.id/website-asset/Video/factory_tour_video.mp4" target="_blank" rel="noopener noreferrer">
-            <Button className="inline-flex items-center space-x-2" size="lg">
+            <Button className="inline-flex items-center space-x-2 text-white" size="lg"> {/* Added text-white class */}
               <Play className="h-5 w-5" />
               <span>Watch Full video</span>
             </Button>

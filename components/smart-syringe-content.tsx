@@ -185,10 +185,10 @@ return (
 
                 {/* Content */}
                 <div className="flex flex-col justify-center space-y-6">
-                  <h2 className="text-3xl font-bold text-[#4DA8CF]">
+                  <h2 className="text-3xl font-bold text-[#4DA8CF] bg-gray-100 p-4 rounded-md font-serif mb-4">
                     {products[currentIndex].name}
                   </h2>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed bg-gray-50 p-4 rounded-md font-sans mb-4">
                     {products[currentIndex].description}
                   </p>
                   

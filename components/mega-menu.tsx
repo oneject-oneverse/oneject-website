@@ -60,14 +60,39 @@ export function MegaMenu() {
     href: string;
     icon: string;
   } | null>(null)
+  const megaMenuRef = useRef<HTMLDivElement>(null)
 
   const renderIcon = (iconName: string) => {
     const IconComponent = Icons[iconName as keyof typeof Icons];
     return IconComponent ? <IconComponent className="h-4 w-4 mr-0.5" /> : null;
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (megaMenuRef.current && !megaMenuRef.current.contains(event.target as Node)) {
+        setActiveMenu(null);
+        setActiveSubMenu(null);
+        setActiveProduct(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleLearnMoreClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setActiveMenu(null);
+    setActiveSubMenu(null);
+    setActiveProduct(null);
+    window.location.href = href;
+  };
+
   return (
-    <nav className="hidden lg:block">
+    <nav className="hidden lg:block" ref={megaMenuRef}>
       <ul className="flex items-center space-x-8">
         {Object.entries(navigationItems).map(([key, value]) => (
           <li
@@ -105,31 +130,31 @@ export function MegaMenu() {
                   transition={{ duration: 0.2 }}
                   className={cn(
                     "fixed left-0 right-0 top-16 z-50 bg-white shadow-lg",
-                    key === "Product" ? "h-[calc(100vh-4rem)]" : "max-w-screen-xl rounded-lg border p-6 mx-auto"
+                    key === "Product" ? "h-[calc(100vh-4rem)] overflow-y-auto" : "max-w-screen-xl rounded-lg border p-6 mx-auto"
                   )}
                 >
                   {key === "Product" ? (
-                    <div className="relative h-full">
+                    <div className="relative">
                       {/* Circular Design Element */}
-                      <div className="absolute right-0 top-0">
+                      <div className="absolute right-0 top-0 pointer-events-none">
                         <Image
                           src="https://beehive.web.id/oji/website-asset/Logogram-Oneject-New.png"
                           alt="Oneject Logogram"
-                          width={600} // Restored to original size
-                          height={600} // Restored to original size
+                          width={450}
+                          height={450}
                           className="opacity-50"
                         />
                       </div>                      
-                      <div className="container mx-auto h-full max-w-screen-xl px-8 py-8">
+                      <div className="container mx-auto max-w-screen-xl px-8 py-8">
                         <h2 className="mb-8 text-4xl font-bold text-[#3F8F81]">
                           The Smart Choice for Safety
                           <br />
                           Products that Protect
                         </h2>
                         
-                        <div className="flex h-[calc(100vh-16rem)] gap-8">
+                        <div className="flex flex-col lg:flex-row gap-8">
                           {/* Categories List */}
-                          <div className="w-1/5 space-y-2 overflow-y-auto pr-2">
+                          <div className="w-full lg:w-1/5 space-y-2 overflow-y-auto pr-2">
                             {value.items?.map((category, index) => (
                               <div
                                 key={index}
@@ -167,7 +192,7 @@ export function MegaMenu() {
                           </div>
 
                           {/* Products List */}
-                          <div className="w-1/3 overflow-y-auto border-x px-6">
+                          <div className="w-full lg:w-1/3 overflow-y-auto border-x px-6">
                             {value.items?.map((category) => {
                               if (category.title === activeSubMenu && category.items) {
                                 return (
@@ -209,7 +234,7 @@ export function MegaMenu() {
                           </div>
 
                           {/* Product Preview */}
-                          <div className="w-[45%] h-full overflow-y-auto rounded-lg bg-gray-50 p-6">
+                          <div className="w-full lg:w-[45%] overflow-y-auto rounded-lg bg-gray-50 p-6">
                             {activeProduct ? (
                               <div className="space-y-6">
                                 <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-white">
@@ -246,20 +271,20 @@ export function MegaMenu() {
                                   />
                                 </div>
                                 <div className="space-y-4">
-                                  <h3 className="text-2xl font-bold text-[#3F8F81]">
+                                  <h3 className="text-2xl font-bold text-[#3F8F81] bg-gray-100 p-2 rounded-md font-serif">
                                     {activeProduct.title}
                                   </h3>
-                                  <p className="text-gray-600">
+                                  <p className="text-gray-600 bg-gray-50 p-2 rounded-md font-sans">
                                     Experience superior quality and safety with our {activeProduct.title.toLowerCase()}. 
                                     Designed with precision and care, this product meets the highest standards in medical equipment.
                                   </p>
-                                  <Link
-                                    href={activeProduct.href}
+                                  <button
                                     className="inline-flex items-center space-x-2 text-[#6DC5EE] hover:text-[#3F8F81]"
+                                    onClick={(e) => handleLearnMoreClick(e, activeProduct.href)}
                                   >
                                     <span>Learn more</span>
                                     <ChevronRight className="h-4 w-4" />
-                                  </Link>
+                                  </button>
                                 </div>
                               </div>
                             ) : (
